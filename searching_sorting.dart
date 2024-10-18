@@ -80,7 +80,14 @@ int linear(List<int> list, int target) {
 }
 
 // Q5
-void binaryIter(List<int> unsorted) {}
+int binaryIter(List<int> list, int target) {
+  int n = list.length;
+  int mid = n ~/ 2;
+
+  if (target == list[mid]) {
+    return mid;
+  } else if (target < list[mid]) {}
+}
 
 // Q6
-void binaryRecur(List<int> unsorted) {}
+void binaryRecur(List<int> list, int target) {}

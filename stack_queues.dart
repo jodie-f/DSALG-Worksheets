@@ -4,6 +4,14 @@ void main() {
   queue.enqueue(6);
   print(queue.items);
   print(queue.length());
+
+  Stack stack = Stack();
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  print(stack);
+  stack.pop();
+  print(stack);
 }
 
 class Queue {
@@ -59,10 +67,22 @@ class Stack {
   void push(dynamic newData) {
     if (top == maxStackSize - 1) {
       print("Item cannot be added to a full stack");
+    } else {
+      top += 1;
+      items.insert(top, newData);
+      print("Top index: $top");
     }
-
-    top += 1;
-    items.insert(top, newData);
-    print("Top index: $top");
   }
+
+  void pop() {
+    if (top == -1) {
+      print("Cannot pop from an empty stack !!!");
+    } else {
+      dynamic removed = items[top];
+      items.removeAt(top);
+      print("$removed has been popped");
+    }
+  }
+
+  String toString() => "Current stack: ${items.reversed.toList()}";
 }
